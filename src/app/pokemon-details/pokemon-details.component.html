@@ -1,0 +1,18 @@
+<div class="card">
+  <h1>{{ capitalizeFirstLetter(pokemonDetails.name) }}</h1>
+  <div class="imageMatrix">
+    <div class="imageRow">
+      <img height="170" src="{{ pokemonDetails.spriteFront }}" alt="" />
+      <img height="170" src="{{ pokemonDetails.spriteBack }}" alt="" />
+    </div>
+    <div class="imageRow">
+      <img height="170" src="{{ pokemonDetails.shinySpriteFront }}" alt="" />
+      <img height="170" src="{{ pokemonDetails.shinySpriteBack }}" alt="" />
+    </div>
+  </div>
+  <div class="info">
+    <p>Id: {{ pokemonDetails.id }}</p>
+    <p>Weight: {{ poundsToKilograms(pokemonDetails.weight) }} kg</p>
+    <p>Height: {{ decimeterToCentimeter(pokemonDetails.height) }} cm</p>
+  </div>
+</div>

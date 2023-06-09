@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import { PokemonsComponent } from './pokemons/pokemons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PokemonDetailsComponent,
+    PokemonsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+  ],
+  exports: [
+    PokemonCardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

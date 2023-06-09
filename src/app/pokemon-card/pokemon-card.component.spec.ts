@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonCardComponent } from './pokemon-card.component';
+import { PokemonService } from '../services/pokemon.service';
+import { of } from 'rxjs/internal/observable/of';
 
-describe('PokemonCardComponent', () => {
-  let component: PokemonCardComponent;
-  let fixture: ComponentFixture<PokemonCardComponent>;
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [PokemonCardComponent],
+    providers: [
+      { provide: PokemonService, useValue: { getPokemon: () => of({}) } },
+    ],
+  }).compileComponents();
+});
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [PokemonCardComponent]
-    });
-    fixture = TestBed.createComponent(PokemonCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+beforeEach(() => {
+  const fixture = TestBed.createComponent(PokemonCardComponent);
+  const component = fixture.componentInstance;
+  expect(component.poundsToKilograms(100)).toEqual('45');
+  fixture.detectChanges();
 });

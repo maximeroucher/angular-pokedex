@@ -1,6 +1,6 @@
-import { Component, Input, TemplateRef } from '@angular/core';
-import { PokemonService } from '../services/pokemon.service';
-import { Pokemon } from '../type/pokemon';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { Pokemon } from 'src/app/type/pokemon';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -8,7 +8,7 @@ import { Pokemon } from '../type/pokemon';
   styleUrls: ['./pokemon-card.component.css'],
   inputs: ['id'],
 })
-export class PokemonCardComponent {
+export class PokemonCardComponent implements OnInit {
   @Input()
   id!: string;
 
@@ -18,25 +18,29 @@ export class PokemonCardComponent {
 
   errorMessage!: string;
 
-  constructor(private pokemonService: PokemonService) {
-    
-  }
+  constructor(private pokemonService: PokemonService) {}
 
   ngOnInit() {
     this.fetchPokemon(this.id);
   }
 
   public fetchPokemon(id: string) {
-    this.pokemonService.getPokemon(id).subscribe(
-      (data) => {
-        this.pokemon = data as Pokemon;
+    this.pokemonService.getPokemon(id).subscribe({
+      next: (data) => {
+        this.pokemon = {
+          name: data.name,
+          id: data.id,
+          sprite: data.sprites.other['official-artwork'].front_default,
+          height: data.height,
+          weight: data.weight,
+        };
         this.loading = false;
       },
-      (error) => {
+      error: (error) => {
         this.errorMessage = error.message;
         this.loading = false;
       },
-    );
+    });
   }
 
   public poundsToKilograms(pounds: number) {
