@@ -1,48 +1,47 @@
 .intro {
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 30px;
-  }
-  
-  .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .info {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 250px;
-    font-size: 15px;
-  }
-  
-  .card h1 {
-    font-size: 40px;
-  }
-  
-  .imageRow {
-    margin-bottom: 20px;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
-  
-  .imageMatrix {
-    margin-top: 20px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .error {
-    color: red;
-    margin-top: 50px;
-  }
-  
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 250px;
+  font-size: 15px;
+}
+
+.card h1 {
+  font-size: 40px;
+}
+
+.imageRow {
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.imageMatrix {
+  margin-top: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  margin-top: 50px;
+}
