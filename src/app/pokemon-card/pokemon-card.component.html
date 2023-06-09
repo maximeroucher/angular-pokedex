@@ -1,0 +1,16 @@
+<div class="pokemon-card">
+  <div *ngIf="!loading && !errorMessage">
+    <p>{{ capitalizeFirstLetter(pokemon.name) }}</p>
+    <img [src]="pokemon.sprites.front_default" alt="" />
+    <p>Id : {{ pokemon.id }}</p>
+    <p>Weight : {{ poundsToKilograms(pokemon.weight) }} kg</p>
+    <p>Height : {{ decimeterToCentimeter(pokemon.height) }} cm</p>
+  </div>
+  <div *ngIf="loading">
+    <p>Loading ...</p>
+    <img src="assets/loader.svg" />
+  </div>
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>
