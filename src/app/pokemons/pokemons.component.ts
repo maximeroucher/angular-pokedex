@@ -159,4 +159,6 @@ export class PokemonsComponent {
     '150',
     '151',
   ];
+
+  myPokedex: string[] = [];
 }

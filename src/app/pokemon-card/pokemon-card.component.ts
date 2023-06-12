@@ -54,4 +54,8 @@ export class PokemonCardComponent implements OnInit {
   public capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  public catchPokemon() {
+    alert('You caught ' + this.pokemon.name + '!');
+  }
 }

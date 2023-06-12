@@ -7,13 +7,33 @@ a {
   border-color: black;
   border-style: double;
   border-width: 5px;
-  width: 325px;
+  width: 350px;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
   margin: 10px;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.row {
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+button {
+  width: 80px;
+  font-family: "PokemonGB";
+  background-color: crimson;
+  padding: 10px 0 5px 0;
+  border: double;
+  color: white;
+}
+
+.filler {
+  width: 60px;
 }
 
 .pokemon-card img {

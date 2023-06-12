@@ -1,7 +1,11 @@
 <a [routerLink]="[id, 'details']">
   <div class="pokemon-card">
     <div *ngIf="!loading && !errorMessage">
-      <p>{{ capitalizeFirstLetter(pokemon.name) }}</p>
+      <div class="row">
+        <div class="filler"></div>
+        <p>{{ capitalizeFirstLetter(pokemon.name) }}</p>
+        <button onclick="catchPokemon()">Catch</button>
+      </div>
       <img [src]="pokemon.sprite" alt="" />
       <p>Id : {{ pokemon.id }}</p>
       <p>Weight : {{ poundsToKilograms(pokemon.weight) }} kg</p>
